@@ -63,7 +63,7 @@ Lets parse unsigned & signed transactions by hands. Helpfull link here
 https://medium.com/coinmonks/bitcoin-p2pkh-transaction-breakdown-bb663034d6df
 
 ```javascript
-  // first hex picture
+  // Unsigned transaction
   // 0100000001c14f49c540948b9b9a6f1d0eae70c27830e4e734c5c7613b0d49c5e694f6673b010000001976a9142934df865df1baf8b2172cd750bc0179dbdea29288acfeffffff0228230000000000001976a91467643e0d5442d43275189ea648aeb02aeae38a1a88ace458c800000000001976a9142934df865df1baf8b2172cd750bc0179dbdea29288ac00000000
   // ------
   // 01000000 Version Number
@@ -80,7 +80,7 @@ https://medium.com/coinmonks/bitcoin-p2pkh-transaction-breakdown-bb663034d6df
   // 1976a9142934df865df1baf8b2172cd750bc0179dbdea29288ac - locking script or scriptPubKey for mjGqLcJgCkJzHiXXNipBWVgvgVPWt49L2S
   // 00000000
 
-  /// broadcast hex picture 
+  /// Broadcast ready signed transaction   
   // 0100000001c14f49c540948b9b9a6f1d0eae70c27830e4e734c5c7613b0d49c5e694f6673b010000006a473044022035e3e8f906e882d6d4c5a36ebd112e3713a4ab1d9a3094eb347563a10ffc09b402201a036797437f40ae246c2e59d8bc7e552dd24c8d39c430877fef894e3df070870121034468b0a49321eebbd9032a8524c9bce1ab7f7abf192494641da294861926c449feffffff0228230000000000001976a91467643e0d5442d43275189ea648aeb02aeae38a1a88ace458c800000000001976a9142934df865df1baf8b2172cd750bc0179dbdea29288ac00000000
   // ------
   // 01000000 Version Number   
