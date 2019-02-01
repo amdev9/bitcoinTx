@@ -51,7 +51,7 @@ Stacktrace npm bitcoinjs-lib library `sign` method of class `TransactionBuilder`
 
 
 
-Snippet of code from `index.js`:
+
 
 ```javascript
   console.log('====---== keyPair.sign(signatureHash) ', signature);
@@ -131,16 +131,14 @@ mykey:
 }
 ```
 
+Snippet of code from `index.js`:
 ```javascript
   const alice = bitcoin.ECPair.fromWIF('cQo2bAcaAXA9HiZaTQmSgn5Vk4xjnC2xRzSnNcXHT4JnetMCsiJ6', bitcoin.networks.testnet)
   console.log('publicKey ', alice.publicKey.toString('hex'));
   console.log('privateKey ', alice.privateKey.toString('hex'));
 ```
 
-
-
 ![node index.js command](https://raw.githubusercontent.com/cypherpunk99/bitcoinTx/master/nodeIndex.png)
-
 
 Result:
 
