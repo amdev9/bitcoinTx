@@ -43,6 +43,8 @@ Stacktrace for `sign` method of class `TransactionBuilder`:
   console.log('s ', signature.s.toString(16));
 ```
 
+Lets parse unsigned & signed transactions by hands. Helpfull link here
+https://medium.com/coinmonks/bitcoin-p2pkh-transaction-breakdown-bb663034d6df
 
 ```javascript
   // first hex picture
