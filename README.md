@@ -27,7 +27,7 @@ unspents = {
 # Sign via library `bitcoinjs-lib`
 
 Stacktrace npm bitcoinjs-lib library `sign` method of class `TransactionBuilder`. And print results right into swap:
-![Swap console](https://raw.githubusercontent.com/cypherpunk99/bitcoinTx/master/console.png)
+![Swap console](https://raw.githubusercontent.com/cypherpunk99/bitcoinTx/master/consoleSwap.png)
 
 
 ```javascript
