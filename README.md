@@ -171,7 +171,12 @@ Result: `e8f366d9707c2b34fd0c889a303a7d148768426ba05534a76098380a34ca22732a312c1
 Compare with:
 r: `35e3e8f906e882d6d4c5a36ebd112e3713a4ab1d9a3094eb347563a10ffc09b4`
 s: `1a036797437f40ae246c2e59d8bc7e552dd24c8d39c430877fef894e3df07087`
- 
+
+
+# Resume
+
+`[Unsigned Transaction] => sha256([Unsigned Transaction]) => secp256k1([sha256([Unsigned Transaction])]) => (r, s) => concat([Unsigned Transaction], (r, s)) === [Signed transaction]`
+
 
 Other links:
  - https://ru.bitcoinwiki.org/wiki/P2PKH
