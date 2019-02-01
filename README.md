@@ -47,17 +47,20 @@ Stacktrace npm bitcoinjs-lib library `sign` method of class `TransactionBuilder`
 ```
 ![before HEX](https://raw.githubusercontent.com/cypherpunk99/bitcoinTx/master/beforeHex.png)
 
+
+Show `r, s` in hex format instead of BigInteger.
+```javascript
+  console.log('====---== keyPair.sign(signatureHash) ', signature);
+  console.log('r ', signature.r.toString(16));
+  console.log('s ', signature.s.toString(16));
+```
+
 ![Returns (r, s)](https://raw.githubusercontent.com/cypherpunk99/bitcoinTx/master/rsSegp.png)
 
 
 
 
 
-```javascript
-  console.log('====---== keyPair.sign(signatureHash) ', signature);
-  console.log('r ', signature.r.toString(16));
-  console.log('s ', signature.s.toString(16));
-```
 
 Lets parse unsigned & signed transactions by hands. Helpfull link here
 https://medium.com/coinmonks/bitcoin-p2pkh-transaction-breakdown-bb663034d6df
