@@ -146,3 +146,7 @@ Compare with:
 r: `35e3e8f906e882d6d4c5a36ebd112e3713a4ab1d9a3094eb347563a10ffc09b4`
 s: `1a036797437f40ae246c2e59d8bc7e552dd24c8d39c430877fef894e3df07087`
  
+
+Other links:
+ https://ru.bitcoinwiki.org/wiki/P2PKH
+ https://bitcoin.org/en/developer-guide#transactions
