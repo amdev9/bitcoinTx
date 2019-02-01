@@ -62,7 +62,7 @@ Show `r, s` in hex format instead of BigInteger.
 
 
 
-Lets parse unsigned & signed transactions by hands. Helpfull link here
+Lets parse unsigned & signed transactions by hands. Helpful link here
 https://medium.com/coinmonks/bitcoin-p2pkh-transaction-breakdown-bb663034d6df
 
 ```javascript
