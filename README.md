@@ -1,8 +1,10 @@
-
-// picture with swap online transaction
+ 
+![swap.online transaction](https://raw.githubusercontent.com/cypherpunk99/bitcoinTx/master/swapStart.png)
 
 Send from `mjGqLcJgCkJzHiXXNipBWVgvgVPWt49L2S` to `mpwdymxe6cCRviGDahusMtWQ3SSD6PDgbz` amount `0.00009`
 Current BTC Balance: `0.13146099`
+
+![values](https://raw.githubusercontent.com/cypherpunk99/bitcoinTx/master/values.png)
 
 ```javascript
 unspents = {
@@ -13,13 +15,20 @@ unspents = {
     height: 1454616
     satoshis: 13146099
     scriptPubKey: "76a9142934df865df1baf8b2172cd750bc0179dbdea29288ac" // or locking script for mjGqLcJgCkJzHiXXNipBWVgvgVPWt49L2S
-    txid: "3b67f694e6c5490d3b61c7c534e7e43078c270ae0e1d6f9a9b8b9440c5494fc1" // previous transaction hash picture
+    txid: "3b67f694e6c5490d3b61c7c534e7e43078c270ae0e1d6f9a9b8b9440c5494fc1" // previous transaction hash 
     vout: 1
   }
 }
 ```
 
-Stacktrace for `sign` method of class `TransactionBuilder`:
+![Previous transaction hash picture](https://raw.githubusercontent.com/cypherpunk99/bitcoinTx/master/prevTransactionHash.png)
+
+
+# Sign via library `bitcoinjs-lib`
+
+Stacktrace npm bitcoinjs-lib library `sign` method of class `TransactionBuilder`. And print results right into swap:
+![Swap console](https://raw.githubusercontent.com/cypherpunk99/bitcoinTx/master/console.png)
+
 
 ```javascript
   TransactionBuilder.prototype.sign = function (vin, keyPair, redeemScript, hashType, witnessValue, witnessScript) { // https://github.com/bitcoinjs/bitcoinjs-lib/blob/46c1991efacbe97b3d846fcd2763b5a23b3308d5/src/transaction_builder.js#L642
@@ -28,14 +37,21 @@ Stacktrace for `sign` method of class `TransactionBuilder`:
   // =>
   Transaction.prototype.hashForSignature = function (inIndex, prevOutScript, hashType) { // https://github.com/bitcoinjs/bitcoinjs-lib/blob/46c1991efacbe97b3d846fcd2763b5a23b3308d5/src/transaction.js#L254
   // => 
-  console.log("!!HEX!! ", txTmp.toHex()); // picture of swap !!HEX!!
+  console.log("!!HEX!! ", txTmp.toHex()); // !!HEX!!
   // => 
   return bcrypto.hash256(buffer) // https://github.com/bitcoinjs/bitcoinjs-lib/blob/46c1991efacbe97b3d846fcd2763b5a23b3308d5/src/transaction.js#L316
   // =>
   // Equals secp256k1(signatureHash, privateKey)
   const signature = keyPair.sign(signatureHash) // https://github.com/bitcoinjs/bitcoinjs-lib/blob/46c1991efacbe97b3d846fcd2763b5a23b3308d5/src/transaction_builder.js#L695
-  // Returns (r, s) picture
+  // Returns (r, s)  
 ```
+![before HEX](https://raw.githubusercontent.com/cypherpunk99/bitcoinTx/master/beforeHex.png)
+
+![Returns (r, s)](https://raw.githubusercontent.com/cypherpunk99/bitcoinTx/master/rsSegp.png)
+
+
+
+Snippet of code from `index.js`:
 
 ```javascript
   console.log('====---== keyPair.sign(signatureHash) ', signature);
@@ -95,6 +111,7 @@ https://medium.com/coinmonks/bitcoin-p2pkh-transaction-breakdown-bb663034d6df
 
 ```
 
+# Sign via keychain
 
 mykey:
 ```javascript
@@ -120,6 +137,11 @@ mykey:
   console.log('privateKey ', alice.privateKey.toString('hex'));
 ```
 
+
+
+![node index.js command](https://raw.githubusercontent.com/cypherpunk99/bitcoinTx/master/nodeIndex.png)
+
+
 Result:
 
 ```
@@ -140,6 +162,10 @@ Singing via keychain:
 }
 ```
 
+![sign_hex Keychain](https://raw.githubusercontent.com/cypherpunk99/bitcoinTx/master/signHexKeychain.png)
+
+
+
 Result: `e8f366d9707c2b34fd0c889a303a7d148768426ba05534a76098380a34ca22732a312c18835dd3999b03800de9124192b2ce062ef93bcf83f15bbd254b04ecbb00`
 
 Compare with:
@@ -148,5 +174,5 @@ s: `1a036797437f40ae246c2e59d8bc7e552dd24c8d39c430877fef894e3df07087`
  
 
 Other links:
- https://ru.bitcoinwiki.org/wiki/P2PKH
- https://bitcoin.org/en/developer-guide#transactions
+ - https://ru.bitcoinwiki.org/wiki/P2PKH
+ - https://bitcoin.org/en/developer-guide#transactions
