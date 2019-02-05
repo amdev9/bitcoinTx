@@ -176,9 +176,9 @@ s: `1a036797437f40ae246c2e59d8bc7e552dd24c8d39c430877fef894e3df07087`
 
 # Resume
 
-`[Unsigned Transaction] => sha256([Unsigned Transaction]) => secp256k1([sha256([Unsigned Transaction])]) => (r, s) => concat([Unsigned Transaction], (r, s)) === [Signed transaction]`
+`[Unsigned Transaction] => sha256 (sha256 ([Unsigned Transaction]) => secp256k1([sha256([Unsigned Transaction])]) => (r, s) => concat([Unsigned Transaction], (r, s)) === [Signed transaction]`
 
-Fix it:
+ 
 
 ```cpp
   case blockchain_te::bitcoin:
